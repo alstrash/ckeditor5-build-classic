@@ -11,10 +11,11 @@ import UploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapte
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
+import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
+import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
 import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading';
-import Indent from '@ckeditor/ckeditor5-indent/src/indent';
 import Link from '@ckeditor/ckeditor5-link/src/link';
 import List from '@ckeditor/ckeditor5-list/src/list';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
@@ -24,8 +25,7 @@ import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 import FontSize from '@ckeditor/ckeditor5-font/src/fontsize';
 import FontFamily from '@ckeditor/ckeditor5-font/src/fontfamily';
-import FontColor from '@ckeditor/ckeditor5-font/src/fontcolor';
-import FontBackgroundColor from '@ckeditor/ckeditor5-font/src/fontbackgroundcolor';
+import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -39,18 +39,18 @@ ClassicEditor.builtinPlugins = [
 	BlockQuote,
 	CKFinder,
 	Heading,
-	Indent,
 	Link,
 	List,
+	Strikethrough,
+	Underline,
+	Alignment,
 	Paragraph,
 	PasteFromOffice,
 	Table,
 	TableToolbar,
 	TextTransformation,
 	FontSize,
-	FontFamily,
-	FontColor,
-	FontBackgroundColor
+	FontFamily
 ];
 
 // Editor configuration.
@@ -61,21 +61,20 @@ ClassicEditor.defaultConfig = {
 			'|',
 			'bold',
 			'italic',
+			'strikethrough',
+			'underline',
 			'link',
 			'bulletedList',
 			'numberedList',
 			'|',
-			'indent',
-			'outdent',
+			'alignment',
 			'|',
 			'blockQuote',
 			'insertTable',
 			'undo',
 			'redo',
 			'fontsize',
-			'fontcolor',
-			'fontfamily',
-			'fontbackgroundcolor'
+			'fontfamily'
 		]
 	},
 	table: {
